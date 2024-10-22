@@ -1,0 +1,33 @@
+<ul>
+    {% for etudiant in etudiants  %}
+        <li>
+        {{ etudiant |upper }}
+        </li>
+            {%else %}
+            <strong>La liste des etudiants est vide</strong>
+    {% endfor %}
+
+</ul>
+
+<h1>liste modules </h1>
+
+<table border="1">
+    <tr>
+        <td>Id module</td>
+        <td>Nom</td>
+        <td>Enseignants</td>
+        <td>Nombre Heure</td>
+        <td>Date</td>
+        <td>Affectation</td>
+    </tr>
+    {% for m in listeModules %}
+    <tr>
+        <td>{{m.id}}</td>
+        <td>{{m.nom}}</td>
+        <td>{{m.enseignant}}</td>
+        <td>{{m.nbheure}}</td>
+        <td>{{m.date}}</td>
+        <td> <a href="{{ path('Affectation') }}"> Affecter </a> </td>
+    </tr>
+    {% endfor %}
+</table>
